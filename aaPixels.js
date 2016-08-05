@@ -18,5 +18,6 @@
             update('s_i_' + (s._in ? s._in + '_' : '') + s.visitorNamespace, s.rc ? s.rc[s.visitorNamespace] : 0);
         }
     }
+    return aaPixels;
 }
     ());
