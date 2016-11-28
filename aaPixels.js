@@ -15,9 +15,9 @@
         if (window.AppMeasurement) {
             update('s_i_' + s.account, s._in);
         } else {
-            update('s_i_' + (s._in ? s._in + '_' : '') + s.visitorNamespace, s.rc ? s.rc[s.visitorNamespace] : 0);
+            update('s_i_' + (s._in !== undefined ? s._in + '_' : '') + s.visitorNamespace, s.rc ? s.rc[s.visitorNamespace] : 0);
         }
     }
-    return aaPixels;
+    return pixels;
 }
     ());
