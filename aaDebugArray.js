@@ -70,3 +70,23 @@
     });
 }
     ());
+
+// Alternate
+(function () {
+    'use strict';
+    var sObj = window.s;
+    if (sObj && sObj.registerPreTrackCallback) {
+        sObj.registerPreTrackCallback(function (reqUrl) {
+            window.aaDebugArray = window.aaDebugArray || [];
+            var aaDebugArray = window.aaDebugArray;
+
+            if (reqUrl) {
+                if (aaDebugArray.indexOf(reqUrl) < 0) {
+                    aaDebugArray.push(reqUrl);
+                }
+            }
+            window.console.log('aaDebugArray', aaDebugArray);
+        });
+    }
+}
+    ());
